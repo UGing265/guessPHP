@@ -8,24 +8,24 @@
 
     <?php
     if (!isset($_GET['guess'])) {
-        echo "<p>Please enter a guess using the URL, like ?guess=42</p>";
+        echo "<p>Missing guess parameter</p>";
     } else {
         $guess = $_GET['guess'];
 
         if (strlen($guess) < 1) {
-            echo "<p>Your guess is too short.</p>";
+            echo "<p>Your guess is too short</p>";
         } elseif (!is_numeric($guess)) {
-            echo "<p>Your guess is not a number.</p>";
+            echo "<p>Your guess is not a number</p>";
         } else {
             $guess = (int)$guess;
             $correct = 32;
 
             if ($guess < $correct) {
-                echo "<p>Your guess is too low.</p>";
+                echo "<p>Your guess is too low</p>";
             } elseif ($guess > $correct) {
-                echo "<p>Your guess is too high.</p>";
+                echo "<p>Your guess is too high</p>";
             } else {
-                echo "<p>Congratulations - You are right!</p>";
+                echo "<p>Congratulations - You are right</p>";
             }
         }
     }
